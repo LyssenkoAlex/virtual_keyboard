@@ -3,6 +3,96 @@ html {
   box-sizing: border-box;
 }
 
-p {
+$key_size: 32px;
 
+body {
+  font-family: "Work Sans", "FuturaBookC", sans-serif;
+}
+
+main {
+  display: block;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+.keyboardInput {
+  display: block;
+  position: relative;
+  width: 90%;
+  height: auto;
+  padding: 18px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  font-size: 30px;
+  line-height: 40px;
+  color: #757374;
+  border: 1px;
+  border-bottom: 2px solid #ddd;
+  background: transparent;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(58, $key_size/4);
+  grid-template-rows: repeat(5, $key_size);
+  grid-column-gap: 8px;
+  grid-row-gap: $key_size/4;
+  background: linear-gradient(135deg, #cdcfd6 0%, #bec0c4 100%);
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+.key {
+  background: #f5f5f5;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 0 0 rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  border-radius: 6px;
+  color: #757374;
+}
+
+.g-4 {
+  grid-column: span 4;
+}
+
+.g-8 {
+  grid-column: span 8;
+}
+
+.g-6 {
+  grid-column: span 6;
+}
+
+.g-7 {
+  grid-column: span 7;
+}
+
+.g-12 {
+  grid-column: span 12;
+}
+
+.g-9 {
+  grid-column: span 9;
+}
+
+.g-20 {
+  grid-column: span 20;
+}
+
+span {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.bcgColor {
+  background-color: #2ca2af;
 }
