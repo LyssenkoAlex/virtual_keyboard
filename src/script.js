@@ -1,11 +1,7 @@
-import {ALPHABET} from "./constants.js";
-import {ROW} from "./constants.js";
-import {CLASS_SIZE} from "./constants.js";
+import {ALPHABET, CLASS_SIZE} from "./constants.js";
 
 
-init('eng');
-
-function init(lang) {
+const init = (lang) => {
 
     let el = document.querySelector(".keyboard");
     let row = document.createElement('div');
@@ -17,20 +13,34 @@ function init(lang) {
         button.classList.add(CLASS_SIZE[y.size].CLASS);
         let span = document.createElement('span');
         span.classList.add('sm');
-        let textNode = document.createTextNode(y.eng);
+        let textNode = document.createTextNode(y[lang]);
         span.append(textNode);
         button.append(span);
         row.append(button);
         el.append(row);
     })
+};
 
+const drawTextArea = () => {
+    let el = document.querySelector(".wrapper");
+    let div = document.createElement('div');
+    div.classList.add('area_wrapper')
+    let textarea = document.createElement('textarea');
+    textarea.rows = 5;
+    textarea.classList.add('text_container');
+    div.append(textarea);
+    el.append(div);
+};
 
-}
+init('eng');
+drawTextArea();
 
 
 document.addEventListener('keypress', (e) => {
-   let el = document.getElementById(e.code);
-   el.style.opacity = '0.6';
+    let el = document.getElementById(e.code);
+    el.style.opacity = '0.6';
+    let area = document.querySelector('.text_container');
+    area.innerHTML = area.innerHTML + e.key;
 });
 
 document.addEventListener('keyup', (e) => {
@@ -40,9 +50,14 @@ document.addEventListener('keyup', (e) => {
 
 
 let keyboard = document.querySelector(".keyboard");
+
 keyboard.addEventListener('click', (e) => {
-    let element =  e.target;
-    console.log('el: ', element.innerHTML )
-})
+    if(e.target.nodeName === 'SPAN') {
+        let element = e.target;
+        let area = document.querySelector('.text_container');
+        area.innerHTML = area.innerHTML + element.innerHTML;
+    }
+
+});
 
 
