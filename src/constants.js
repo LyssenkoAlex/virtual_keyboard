@@ -48,7 +48,7 @@ export const ALPHABET = [
     }),
     new Key({eng: 'Tab', rus: 'Tab', type: 'TAB', size: 6, row: ROW.SECOND, PRINTABLE: false, code: 'Tab'}),
     new Key({eng: 'q', rus: 'й', type: 'KEY', size: 4, row: ROW.SECOND, PRINTABLE: true, code: 'KeyQ'}),
-    new Key({eng: 'w', rus: 'ц', type: 'KEY', size: 4, row: ROW.SECOND, PRINTABLE: true, code: 'KeyWe'}),
+    new Key({eng: 'w', rus: 'ц', type: 'KEY', size: 4, row: ROW.SECOND, PRINTABLE: true, code: 'KeyW'}),
     new Key({eng: 'e', rus: 'у', type: 'KEY', size: 4, row: ROW.SECOND, PRINTABLE: true, code: 'KeyE'}),
     new Key({eng: 'r', rus: 'к', type: 'KEY', size: 4, row: ROW.SECOND, PRINTABLE: true, code: 'KeyR'}),
     new Key({eng: 't', rus: 'е', type: 'KEY', size: 4, row: ROW.SECOND, PRINTABLE: true, code: 'KeyT'}),

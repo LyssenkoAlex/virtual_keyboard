@@ -13,6 +13,7 @@ function init(lang) {
     ALPHABET.forEach((y) => {
         let button = document.createElement('button');
         button.type = 'button';
+        button.id = y.code;
         button.classList.add(CLASS_SIZE[y.size].CLASS);
         let span = document.createElement('span');
         span.classList.add('sm');
@@ -23,8 +24,25 @@ function init(lang) {
         el.append(row);
     })
 
+
 }
 
 
+document.addEventListener('keypress', (e) => {
+   let el = document.getElementById(e.code);
+   el.style.opacity = '0.6';
+});
+
+document.addEventListener('keyup', (e) => {
+    let el = document.getElementById(e.code);
+    el.style.opacity = '1';
+});
+
+
+let keyboard = document.querySelector(".keyboard");
+keyboard.addEventListener('click', (e) => {
+    let element =  e.target;
+    console.log('el: ', element.innerHTML )
+})
 
 
