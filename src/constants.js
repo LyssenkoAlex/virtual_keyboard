@@ -13,7 +13,14 @@ class Key {
 
 }
 
-const ROW = {FIRST: 'FIRST', SECOND: 'SECOND', THIRD: 'THIRD', FOUTH: 'FOUTH', FIFTH: 'FIFTH'};
+export const ROW = {FIRST: 'FIRST', SECOND: 'SECOND', THIRD: 'THIRD', FOUTH: 'FOUTH', FIFTH: 'FIFTH'};
+export const CLASS_SIZE = {
+    4: {CLASS: 'btn0'},
+    6: {CLASS: 'btn_middle'},
+    7: {CLASS: 'btn_middle_xx'},
+    9: {CLASS: 'btn_middle_x'},
+    20: {CLASS: 'btn_extra_large'}
+};
 const LANGUAGE = {ENG: 'eng', RUS: 'rus', SELECTED: 'eng'};
 
 export const ALPHABET = [
@@ -30,7 +37,15 @@ export const ALPHABET = [
     new Key({eng: '0', rus: '0', type: 'KEY', size: 4, row: ROW.FIRST, PRINTABLE: true, code: 'Digit0'}),
     new Key({eng: '-', rus: '-', type: 'KEY', size: 4, row: ROW.FIRST, PRINTABLE: true, code: 'Minus'}),
     new Key({eng: '=', rus: '=', type: 'KEY', size: 4, row: ROW.FIRST, PRINTABLE: true, code: 'Equal'}),
-    new Key({eng: 'Backspace', rus: 'Backspace', type: 'BACKSPACE', size: 6, row: ROW.FIRST, PRINTABLE: false, code: 'Backspace'}),
+    new Key({
+        eng: 'Backspace',
+        rus: 'Backspace',
+        type: 'BACKSPACE',
+        size: 6,
+        row: ROW.FIRST,
+        PRINTABLE: false,
+        code: 'Backspace'
+    }),
     new Key({eng: 'Tab', rus: 'Tab', type: 'TAB', size: 6, row: ROW.SECOND, PRINTABLE: false, code: 'Tab'}),
     new Key({eng: 'q', rus: 'й', type: 'KEY', size: 4, row: ROW.SECOND, PRINTABLE: true, code: 'KeyQ'}),
     new Key({eng: 'w', rus: 'ц', type: 'KEY', size: 4, row: ROW.SECOND, PRINTABLE: true, code: 'KeyWe'}),
@@ -49,7 +64,7 @@ export const ALPHABET = [
         eng: 'Caps Lock',
         rus: 'Caps Lock',
         type: 'CAPS_LOCK',
-        size: 7,
+        size: 9,
         row: ROW.THIRD,
         PRINTABLE: false,
         code: 'CapsLock'
@@ -81,7 +96,7 @@ export const ALPHABET = [
     new Key({eng: 'Ctrl', rus: 'Ctrl', type: 'KEY', size: 4, row: ROW.FIFTH, PRINTABLE: false, code: 'ControlLeft'}),
     new Key({eng: 'Win', rus: 'Win', type: 'KEY', size: 4, row: ROW.FIFTH, PRINTABLE: false, code: 'MetaLeft'}),
     new Key({eng: 'Alt', rus: 'Alt', type: 'KEY', size: 4, row: ROW.FIFTH, PRINTABLE: false, code: 'AltLeft'}),
-    new Key({eng: '&nbsp', rus: '&nbsp', type: 'KEY', size: 20, row: ROW.FIFTH, PRINTABLE: true, code: 'Space'}),
+    new Key({eng: '', rus: '', type: 'KEY', size: 20, row: ROW.FIFTH, PRINTABLE: true, code: 'Space'}),
     new Key({eng: 'ENG', rus: 'RUS', type: 'KEY', size: 4, row: ROW.FIFTH, PRINTABLE: false, code: 'AltRight'}),
     new Key({eng: 'Win', rus: 'Win', type: 'KEY', size: 4, row: ROW.FIFTH, PRINTABLE: false, code: 'MetaRight'}),
     new Key({eng: 'Menu', rus: 'Menu', type: 'KEY', size: 4, row: ROW.FIFTH, PRINTABLE: false, code: 'ContextMenu'}),

@@ -1,30 +1,33 @@
 import {ALPHABET} from "./constants.js";
+import {ROW} from "./constants.js";
+import {CLASS_SIZE} from "./constants.js";
 
 
 init('eng');
 
 function init(lang) {
     console.log('stater')
-    let el = document.getElementById("idKeyboard");
 
-    ALPHABET.forEach(x => {
-        let g = document.createElement('div');
-        g.setAttribute("id", "id" + x.code);
+    let el = document.querySelector(".keyboard");
+    let row = document.createElement('div');
+    row.classList.add('row');
+    ALPHABET.filter((x) =>{
+       return true
+    }).forEach((y) => {
+        let button = document.createElement('button');
+        button.type = 'button';
+        button.classList.add(CLASS_SIZE[y.size].CLASS);
+        let span = document.createElement('span');
+        span.classList.add('sm')
+        let textNode = document.createTextNode(y.eng);
+        span.append(textNode);
 
-        let textNode = '';
-        let gSpan = document.createElement('span');
-
-        if (x[lang] === '&nbsp') {
-            textNode = document.createTextNode('');
-        } else {
-            textNode = document.createTextNode(x[lang]);
-        }
-
-        gSpan.append(textNode);
-        g.append(gSpan);
-        g.classList.add('g-' + x.size, 'key');
-        el.append(g);
+        button.append(span);
+        row.append(button);
+        el.append(row);
     })
+
+
 
 }
 
