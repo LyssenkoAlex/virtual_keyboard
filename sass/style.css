@@ -81,6 +81,10 @@ button > span {
   line-height: 1.25;
 }
 
+.press_down_button {
+  opacity: 0.6;
+}
+
 .text_container {
   width: 85%;
 }

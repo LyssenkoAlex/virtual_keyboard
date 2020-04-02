@@ -24,7 +24,7 @@ const init = (lang) => {
 const drawTextArea = () => {
     let el = document.querySelector(".wrapper");
     let div = document.createElement('div');
-    div.classList.add('area_wrapper')
+    div.classList.add('area_wrapper');
     let textarea = document.createElement('textarea');
     textarea.rows = 5;
     textarea.classList.add('text_container');
@@ -38,14 +38,14 @@ drawTextArea();
 
 document.addEventListener('keypress', (e) => {
     let el = document.getElementById(e.code);
-    el.style.opacity = '0.6';
+    el.classList.add('press_down_button')
     let area = document.querySelector('.text_container');
     area.innerHTML = area.innerHTML + e.key;
 });
 
 document.addEventListener('keyup', (e) => {
     let el = document.getElementById(e.code);
-    el.style.opacity = '1';
+    el.classList.remove('press_down_button');
 });
 
 
@@ -57,7 +57,6 @@ keyboard.addEventListener('click', (e) => {
         let area = document.querySelector('.text_container');
         area.innerHTML = area.innerHTML + element.innerHTML;
     }
-
 });
 
 
