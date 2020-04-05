@@ -55,14 +55,10 @@ document.addEventListener('keyup', (e) => {
 });
 
 document.addEventListener('keydown', (e) => {
+    let el = document.getElementById(e.code);
+    el.classList.add('press_down_button');
     if(e.code === 'Backspace') {
-        let el = document.getElementById(e.code);
-        el.classList.add('press_down_button');
-
-        let area = document.querySelector('.text_container');
-        let text = area.innerHTML;
-        text = text.substring(0, text.length - 1);
-        area.innerHTML = text;
+        backSpaceHit(e);
     }
 
 });
@@ -77,10 +73,20 @@ keyboard.addEventListener('click', (e) => {
         if(element.innerHTML === 'Enter') {
             area.innerHTML = area.innerHTML +  '\n';
         }
+        else if(element.innerHTML === 'Backspace') {
+            backSpaceHit(e)
+        }
         else {
             area.innerHTML = area.innerHTML + element.innerHTML;
         }
     }
+
 });
 
 
+const backSpaceHit = (e) => {
+    let area = document.querySelector('.text_container');
+    let text = area.innerHTML;
+    text = text.substring(0, text.length - 1);
+    area.innerHTML = text;
+};
