@@ -2,8 +2,6 @@ import {ALPHABET, CLASS_SIZE} from "./constants.js";
 import {LANGUAGE} from "./constants.js";
 
 
-let leftShiftKeyPressed = false;
-let leftAltKeyPressed = false;
 let capsLockKeyPressed = false;
 
 
@@ -80,6 +78,7 @@ document.addEventListener('keydown', (e) => {
 let keyboard = document.querySelector(".keyboard");
 
 keyboard.addEventListener('click', (e) => {
+
     if(e.target.nodeName === 'SPAN') {
         let element = e.target;
         let area = document.querySelector('.text_container');
@@ -95,8 +94,16 @@ keyboard.addEventListener('click', (e) => {
         else if(element.innerHTML === 'RUS') {
             init(LANGUAGE.ENG );
         }
+        else if(element.innerHTML === 'Caps Lock') {
+            capsLockKeyPressed = !capsLockKeyPressed;
+        }
         else {
-            area.innerHTML = area.innerHTML + element.innerHTML;
+            if(capsLockKeyPressed) {
+                area.innerHTML = area.innerHTML + element.innerHTML.toUpperCase();
+            }
+            else {
+                area.innerHTML = area.innerHTML + element.innerHTML;
+            }
         }
     }
 
