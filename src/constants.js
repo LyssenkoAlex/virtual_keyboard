@@ -21,7 +21,7 @@ export const CLASS_SIZE = {
     9: {CLASS: 'btn_middle_x'},
     20: {CLASS: 'btn_extra_large'}
 };
-const LANGUAGE = {ENG: 'eng', RUS: 'rus', SELECTED: 'eng'};
+export const LANGUAGE = {ENG: 'eng', RUS: 'rus', SELECTED: 'eng'};
 
 export const ALPHABET = [
     new Key({eng: '`', rus: 'ё', type: 'KEY', size: 4, row: ROW.FIRST, PRINTABLE: true, code: 'Backquote'}),

@@ -1,9 +1,16 @@
 import {ALPHABET, CLASS_SIZE} from "./constants.js";
+import {LANGUAGE} from "./constants.js";
+
+
+let leftShiftKeyPressed = false;
+let leftAltKeyPressed = false;
+let capsLockKeyPressed = false;
 
 
 const init = (lang) => {
-
+    localStorage.setItem('LANGUAGE', lang);
     let el = document.querySelector(".keyboard");
+    el.querySelectorAll('*').forEach(n => n.remove());
     let row = document.createElement('div');
     row.classList.add('row');
     ALPHABET.forEach((y) => {
@@ -32,7 +39,13 @@ const drawTextArea = () => {
     el.append(div);
 };
 
-init('eng');
+if(localStorage.getItem('LANGUAGE') === null) {
+    init(LANGUAGE.ENG);
+}
+else {
+    init(localStorage.getItem('LANGUAGE'));
+}
+
 drawTextArea();
 
 
@@ -75,6 +88,12 @@ keyboard.addEventListener('click', (e) => {
         }
         else if(element.innerHTML === 'Backspace') {
             backSpaceHit(e)
+        }
+        else if(element.innerHTML === 'ENG') {
+            init(LANGUAGE.RUS );
+        }
+        else if(element.innerHTML === 'RUS') {
+            init(LANGUAGE.ENG );
         }
         else {
             area.innerHTML = area.innerHTML + element.innerHTML;
