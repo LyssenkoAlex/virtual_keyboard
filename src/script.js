@@ -94,6 +94,9 @@ keyboard.addEventListener('click', (e) => {
         else if(element.innerHTML === 'RUS') {
             init(LANGUAGE.ENG );
         }
+        else if(element.innerHTML === 'Space') {
+            area.innerHTML = area.innerHTML + ' ';
+        }
         else if(element.innerHTML === 'Caps Lock') {
             capsLockKeyPressed = !capsLockKeyPressed;
         }

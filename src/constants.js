@@ -96,7 +96,7 @@ export const ALPHABET = [
     new Key({eng: 'Ctrl', rus: 'Ctrl', type: 'KEY', size: 4, row: ROW.FIFTH, PRINTABLE: false, code: 'ControlLeft'}),
     new Key({eng: 'Win', rus: 'Win', type: 'KEY', size: 4, row: ROW.FIFTH, PRINTABLE: false, code: 'MetaLeft'}),
     new Key({eng: 'Alt', rus: 'Alt', type: 'KEY', size: 4, row: ROW.FIFTH, PRINTABLE: false, code: 'AltLeft'}),
-    new Key({eng: '', rus: '', type: 'KEY', size: 20, row: ROW.FIFTH, PRINTABLE: true, code: 'Space'}),
+    new Key({eng: 'Space', rus: 'Space', type: 'KEY', size: 20, row: ROW.FIFTH, PRINTABLE: true, code: 'Space'}),
     new Key({eng: 'ENG', rus: 'RUS', type: 'KEY', size: 4, row: ROW.FIFTH, PRINTABLE: false, code: 'AltRight'}),
     new Key({eng: 'Win', rus: 'Win', type: 'KEY', size: 4, row: ROW.FIFTH, PRINTABLE: false, code: 'MetaRight'}),
     new Key({eng: 'Menu', rus: 'Menu', type: 'KEY', size: 4, row: ROW.FIFTH, PRINTABLE: false, code: 'ContextMenu'}),
