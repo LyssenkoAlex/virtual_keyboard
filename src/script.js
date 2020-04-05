@@ -38,14 +38,33 @@ drawTextArea();
 
 document.addEventListener('keypress', (e) => {
     let el = document.getElementById(e.code);
-    el.classList.add('press_down_button')
+    el.classList.add('press_down_button');
     let area = document.querySelector('.text_container');
-    area.innerHTML = area.innerHTML + e.key;
+
+    if(e.key === 'Enter') {
+        area.innerHTML = area.innerHTML + '\n';
+    }
+    else {
+        area.innerHTML = area.innerHTML + e.key;
+    }
 });
 
 document.addEventListener('keyup', (e) => {
     let el = document.getElementById(e.code);
     el.classList.remove('press_down_button');
+});
+
+document.addEventListener('keydown', (e) => {
+    if(e.code === 'Backspace') {
+        let el = document.getElementById(e.code);
+        el.classList.add('press_down_button');
+
+        let area = document.querySelector('.text_container');
+        let text = area.innerHTML;
+        text = text.substring(0, text.length - 1);
+        area.innerHTML = text;
+    }
+
 });
 
 
@@ -55,7 +74,12 @@ keyboard.addEventListener('click', (e) => {
     if(e.target.nodeName === 'SPAN') {
         let element = e.target;
         let area = document.querySelector('.text_container');
-        area.innerHTML = area.innerHTML + element.innerHTML;
+        if(element.innerHTML === 'Enter') {
+            area.innerHTML = area.innerHTML +  '\n';
+        }
+        else {
+            area.innerHTML = area.innerHTML + element.innerHTML;
+        }
     }
 });
 
