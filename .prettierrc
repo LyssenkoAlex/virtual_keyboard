@@ -3,5 +3,6 @@
   "printWidth": 140,
   "tabWidth": 2,
   "singleQuote": true,
+  "comma-dangle": ["error", "always"],
   "trailingComma": "none"
 }
