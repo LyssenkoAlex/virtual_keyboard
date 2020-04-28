@@ -11,10 +11,17 @@
     "type": "git",
     "url": "git+https://github.com/LyssenkoAlex/virtual_keyboard.git"
   },
-  "author": "",
+  "author": "Alex",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/LyssenkoAlex/virtual_keyboard/issues"
   },
-  "homepage": "https://github.com/LyssenkoAlex/virtual_keyboard#readme"
+  "homepage": "https://github.com/LyssenkoAlex/virtual_keyboard#readme",
+  "keywords": [
+    "rs",
+    "school"
+  ],
+  "devDependencies": {
+    "prettier": "^2.0.5"
+  }
 }
