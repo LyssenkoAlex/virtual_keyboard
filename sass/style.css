@@ -10,7 +10,7 @@ body {
 
 .wrapper {
   margin: auto;
-  width: 85%;
+  width: 1025px;
   padding-top: 4em;
 }
 
@@ -24,7 +24,7 @@ body {
   border-radius: 0.5em;
   box-shadow: -1em 0 1.5em rgba(0, 0, 0, 0.6), 0 0 0 1px #aaa inset;
   display: grid;
-  grid-template-columns: 5fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 0.375em 0.875em;
   font-size: 2.8em;
   padding: 0.25em;
@@ -87,6 +87,10 @@ button > span {
 
 .text_container {
   width: 85%;
+}
+
+.note {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
