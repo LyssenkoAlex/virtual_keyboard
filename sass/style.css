@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  margin: 0;
+  display: block;
+}
+
+.wrapper {
+  margin: auto;
+  width: 85%;
+  padding-top: 4em;
+}
+
+.area_wrapper {
+  padding-top: 3em;
+  text-align: center;
+}
+
+.keyboard {
+  background-image: linear-gradient(90deg, #888, #ccc);
+  border-radius: 0.5em;
+  box-shadow: -1em 0 1.5em rgba(0, 0, 0, 0.6), 0 0 0 1px #aaa inset;
+  display: grid;
+  grid-template-columns: 5fr 1fr 1fr;
+  grid-gap: 0.375em 0.875em;
+  font-size: 2.8em;
+  padding: 0.25em;
+}
+
+button {
+  background-color: #eee;
+  border: 0;
+  border-radius: 0.125em;
+  box-shadow: -0.2em 0 0.125em rgba(0, 0, 0, 0.25), 0 0 0 0.04em rgba(0, 0, 0, 0.3), 0.02em 0.02em 0.02em rgba(0, 0, 0, 0.4) inset, -0.05em -0.05em 0.02em rgba(255, 255, 255, 0.8) inset;
+  color: #777;
+  font-size: 1em;
+  outline: 0;
+  vertical-align: top;
+}
+button:hover {
+  opacity: 0.6;
+}
+button:not(:last-of-type) {
+  margin-right: 0.35em;
+}
+button > span {
+  display: flex;
+  justify-content: center;
+}
+
+.btn0 {
+  width: 1.19em;
+  height: 0.75em;
+}
+
+.btn_middle {
+  width: 2em;
+  height: 0.75em;
+}
+
+.btn_middle_x {
+  width: 2.2em;
+  height: 0.75em;
+}
+
+.btn_middle_xx {
+  width: 2.5em;
+  height: 0.75em;
+}
+
+.btn_extra_large {
+  width: 12em;
+  height: 0.75em;
+}
+
+.sm {
+  font-size: 0.4em;
+  line-height: 1.25;
+}
+
+.press_down_button {
+  opacity: 0.6;
+}
+
+.text_container {
+  width: 85%;
+}
+
+/*# sourceMappingURL=style.css.map */
