@@ -35,7 +35,14 @@ const drawTextArea = () => {
   textarea.classList.add('text_container');
   div.append(textarea);
   el.append(div);
+  let divNote = document.createElement('div');
+  let spanDiv = document.createElement('span');
+  spanDiv.innerText = 'Для переключения языков нажмите Shift + Alt'
+  divNote.append(spanDiv);
+  el.append(divNote);
+
 };
+
 
 if (localStorage.getItem('LANGUAGE') === null) {
   init(LANGUAGE.ENG);
@@ -57,7 +64,6 @@ function changeLanguage() {
 
 document.addEventListener('keypress', (e) => {
   let el = document.getElementById(e.code);
-
   if (el !== null) {
     el.classList.add('press_down_button');
     let area = document.querySelector('.text_container');
@@ -65,7 +71,13 @@ document.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
       area.innerHTML = area.innerHTML + '\n';
     } else {
+      if(LANGUAGE.SELECTED === LANGUAGE.ENG) {
       area.innerHTML = area.innerHTML + e.key;
+        }
+      else {
+        let key = ALPHABET.find((x) => x.code === e.code);
+        area.innerHTML = area.innerHTML + key.rus;
+      }
     }
   }
 });
@@ -115,8 +127,10 @@ keyboard.addEventListener('click', (e) => {
     } else if (element.innerHTML === 'Backspace') {
       backSpaceHit(e);
     } else if (element.innerHTML === 'ENG') {
+      LANGUAGE.SELECTED = LANGUAGE.RUS;
       init(LANGUAGE.RUS);
     } else if (element.innerHTML === 'RUS') {
+      LANGUAGE.SELECTED = LANGUAGE.ENG;
       init(LANGUAGE.ENG);
     } else if (element.innerHTML === 'Space') {
       area.innerHTML = area.innerHTML + ' ';
